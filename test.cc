@@ -7,15 +7,14 @@ int main(int argc, char **argv)
 
 	Environment env(dt);
 
+	std::vector<Object*> AllObjects;
 	Plane p({0,0,0});
 	Sphere s({0,0,1}, 0.001);
-
-	env.pushObject(&s);
-	env.pushObject(&p);
-
-	while (true)
-		env.nextState();
+	AllObjects.push_back(&p);
+	AllObjects.push_back(&s);
 
 
+	for (size_t i=0; i<AllObjects.size(); ++i)
+		env.pushObject(AllObjects[i]);
 	return 0;
 }
