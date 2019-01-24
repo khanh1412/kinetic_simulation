@@ -5,6 +5,8 @@ LDFLAGS	=
 
 all:
 	$(CC) $(CCFLAGS) $(INFLAGS) $(LDFLAGS) test.cc -o run
+	./run
+	python3 test.py
 
 clean:
 	rm -f run

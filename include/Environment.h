@@ -126,8 +126,6 @@ class Event
 		}
 		void Sphere2Sphere(Sphere& obj1, Sphere& obj2)
 		{
-			std::cout<<"obj1 "<<obj1.pos.z<<std::endl;
-			std::cout<<"obj2 "<<obj2.pos.z<<std::endl;
 			double dist = (obj1.pos - obj2.pos).length();
 			if (dist > (obj1.r + obj2.r)) return;
 
@@ -183,12 +181,12 @@ class Environment
 			}
 			timer += dt;
 			#ifndef NDEBUG
-		//	details();
+			details();
 			#endif
 		}
 		void details()
 		{
-			std::cout<<"Environment: time "<<timer<<std::endl;
+			std::cout<<"Environment: time "<<timer<<" quantum "<<dt<<std::endl;
 			for (size_t i=0; i<ObjectsList.size(); ++i)
 				ObjectsList[i]->details();
 		}
