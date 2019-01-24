@@ -123,11 +123,11 @@ class Event
 				Sphere2Plane(*sphere2, *plane1);
 			else if (sphere1 != nullptr and sphere2 != nullptr)
 				Sphere2Sphere(*sphere1, *sphere2);
-			else
-				__builtin_trap();
 		}
 		void Sphere2Sphere(Sphere& obj1, Sphere& obj2)
 		{
+			std::cout<<"obj1 "<<obj1.pos.z<<std::endl;
+			std::cout<<"obj2 "<<obj2.pos.z<<std::endl;
 			double dist = (obj1.pos - obj2.pos).length();
 			if (dist > (obj1.r + obj2.r)) return;
 
@@ -183,7 +183,7 @@ class Environment
 			}
 			timer += dt;
 			#ifndef NDEBUG
-			details();
+		//	details();
 			#endif
 		}
 		void details()

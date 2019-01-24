@@ -4,3 +4,4 @@
 run
 *.so
 *.o
+.~lock*
