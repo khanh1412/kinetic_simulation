@@ -5,3 +5,4 @@ run
 *.so
 *.o
 .~lock*
+*.csv
